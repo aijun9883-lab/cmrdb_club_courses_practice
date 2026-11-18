@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>打地鼠</title>
+
+  <!-- 連結 CSS 檔案 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="card">
+    <h1>打地鼠</h1>
+
+    <div class="info">
+      <div>分數：<span id="score">0</span></div>
+      <div>時間：<span id="time">30</span></div>
+    </div>
+
+    <!-- 棋盤是空的，9 個洞會由 JavaScript 產生 -->
+    <div id="board"></div>
+    <button id="startBtn" type="button">開始</button>
+    <p id="message">按下開始，點到地鼠就得分</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

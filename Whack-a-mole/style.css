@@ -1,0 +1,79 @@
+/* 顏色集中放在這裡，之後用 var(--名稱) 取用 */
+:root {
+  --bg: #f4f5f7;      /* 頁面底色 */
+  --card: #ffffff;    /* 卡片底色 */
+  --text: #22252b;    /* 文字 */
+  --muted: #6b7280;   /* 次要文字 */
+  --line: #d9dce3;    /* 邊框 */
+  --hole: #e6e9ef;    /* 洞的顏色 */
+  --accent: #e5484d;  /* 重點色：按鈕 */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  line-height: 1.6;
+}
+
+.card {
+  max-width: 400px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+h1 { font-size: 1.6rem; margin: 0 0 12px; }
+
+/* 分數和時間排成一列，左右各一個 */
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+.info span { font-weight: bold; }
+
+/* 棋盤：3 欄的格子 */
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 每一個洞 */
+.hole {
+  aspect-ratio: 1;          /* 寬高比 1:1，變成正方形 */
+  font-size: 3rem;          /* emoji 的大小 */
+  line-height: 1;
+  background: var(--hole);
+  border: none;
+  border-radius: 50%;       /* 變成圓形 */
+  cursor: pointer;
+  padding: 0;
+}
+.hole:active { transform: scale(0.94); }   /* 按下去縮一點點 */
+
+#startBtn {
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 36px;
+  cursor: pointer;
+}
+#startBtn:hover { filter: brightness(0.92); }
+#startBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+#message { margin: 14px 0 0; min-height: 1.6em; color: var(--muted); }
